@@ -1,0 +1,122 @@
+@use './../../App.scss';
+
+.lh-39 {
+    line-height: 39px !important;
+}
+
+.lh-28 {
+    line-height: 28px !important;
+}
+
+.h-lh-36 {
+    height: 36px !important;
+    line-height: 36px !important;
+}
+
+.time-line {
+    z-index: 1;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 5px;
+        height: calc(100% - 40px);
+        background-color: #d9dee2;
+        left: 0;
+    }
+
+    .hover:hover {
+        h4,
+        span,
+        p {
+            color: #fff !important;
+        }
+    }
+
+    .time-table {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 72px;
+            left: -55px;
+            width: 20px;
+            height: 20px;
+            border: 5px solid #d9dee2;
+            border-radius: 50%;
+            background-color: #ecf0f3;
+            box-shadow: 0 4px 20px -4px rgba(64, 64, 64, 0.8);
+            transition: all 0.5s ease-in-out !important;
+        }
+
+        &:hover::before {
+            background-color: App.$color-primary !important;
+        }
+
+        .line {
+            position: absolute;
+            width: 50% !important;
+            height: 5px !important;
+            background-color: #d9dee2;
+            z-index: -1;
+            top: 80px;
+            left: -8%;
+        }
+
+        &:hover .bor-color-dark {
+            border-color: rgba(255, 255, 255, 0.1) !important;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .lh-39 {
+        line-height: 25px !important;
+    }
+
+    .lh-28 {
+        line-height: 20px !important;
+    }
+
+    .box-shadow {
+        box-shadow: none !important;
+    }
+
+    .time-table::before {
+        left: -32px !important;
+    }
+
+    .time-line {
+        &:before {
+            height: 100% !important;
+        }
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .time-line {
+        &:before {
+            height: 100% !important;
+        }
+
+        .line {
+            left: -9% !important;
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .time-line {
+        &:before {
+            height: 100% !important;
+        }
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .line {
+        left: -10% !important;
+    }
+}
